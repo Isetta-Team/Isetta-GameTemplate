@@ -2,9 +2,11 @@
 The sample, demo game for the IsettaEngine
 
 # Setup Steps
-To use this project as a base use git tag: [StarterProject]()
+Choose one of the following two ways to set up:
+### 1. To setup using our template project
+Download the project at git tag: [StarterProject](), unzip it and open the `.sln` file.
 
-To setup a new project using the IsettaEngine:
+### 2. To setup a new project using the IsettaEngine:
 - Create a Visual Studio Project
 - Create a `.cpp` file to start the engine, copy:
     ```cpp
@@ -48,7 +50,43 @@ To setup a new project using the IsettaEngine:
 The Isetta Engine uses an entity-component-system. Assumptions of the engine:
 - Coordinates are right-handed (`Vector3::left = (1, 0, 0)`)
 - Matricies are row-column (`Matrix4 mat[ROW][COLUMN]`)
-- When using the built `MemoryManager`, it does not protect you against yourself (in general the engine does not protect a naive user from shooting themselves in the foot)
+- When using the built-in `MemoryManager`, it does not protect you against yourself (in general the engine does not protect a naive user from shooting themselves in the foot)
+
+## Levels
+
+`LEVEL_NAME.h`
+```cpp
+#pragma once
+#include <Scene/IsettaLevel.h>
+#include <Scene/Level.h>
+
+DEFINE_LEVEL(LEVEL_NAME)
+void Load() override;
+void OnLevelUnload() override;
+DEFINE_LEVEL_END
+```
+
+`LEVEL_NAME.cpp`
+```cpp
+#include "LEVEL_NAME.h"
+
+// IsettaCore not necessarily needed, holds a number of useful header files
+#include <Core/IsettaCore.h>
+#include <Graphics/CameraComponent.h>
+
+void LEVEL_NAME::Load() {
+    // Level NEEDS a camera
+    Entity* cameraEntity = Entity::Instantiate("Camera");
+    cameraEntity->AddComponent<CameraComponent>();
+    cameraEntity->SetTransform(Math::Vector3{0, 5, 10}, Math::Vector3{-15, 0, 0},
+                             Math::Vector3::one);
+}
+
+void LEVEL_NAME::OnLevelUnload() {
+    // Anything you might need to do on the level unloading
+    // Entity's will be destructed/destroyed on actual level unload
+}
+```
 
 ## Entities/Transforms
 Entities are the objects that persist in the level/scene that can have a parent entity and can have children entities. Entities hold components and have a transform to locate them in the world. Entities can be add to the level through the macros `Entity::Instantiate(std::string name, Entity* parent, bool isStatic)` included with `#include "Scene/Entity.h"`, and return an entity pointer. The `parent` defaults to `nullptr` which sets the entity's parent to the top level and `isStatic` defaults to `false`. Static entities cannot be translated, rotated, or scaled once the level has loaded.
@@ -124,40 +162,4 @@ private:
 public:
 COMPONENT_NAME() = default;
 DEFINE_COMPONENT_END(COMPONENT_NAME, Component)
-```
-
-## Levels
-
-`LEVEL_NAME.h`
-```cpp
-#pragma once
-#include <Scene/IsettaLevel.h>
-#include <Scene/Level.h>
-
-DEFINE_LEVEL(LEVEL_NAME)
-void Load() override;
-void OnLevelUnload() override;
-DEFINE_LEVEL_END
-```
-
-`LEVEL_NAME.cpp`
-```cpp
-#include "LEVEL_NAME.h"
-
-// IsettaCore not necessarily needed, holds a number of useful header files
-#include <Core/IsettaCore.h>
-#include <Graphics/CameraComponent.h>
-
-void LEVEL_NAME::Load() {
-    // Level NEEDS a camera
-    Entity* cameraEntity = Entity::Instantiate("Camera");
-    cameraEntity->AddComponent<CameraComponent>();
-    cameraEntity->SetTransform(Math::Vector3{0, 5, 10}, Math::Vector3{-15, 0, 0},
-                             Math::Vector3::one);
-}
-
-void LEVEL_NAME::OnLevelUnload() {
-    // Anything you might need to do on the level unloading
-    // Entity's will be destructed/destroyed on actual level unload
-}
 ```
