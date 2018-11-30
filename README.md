@@ -2,7 +2,7 @@
 The sample, demo game for the IsettaEngine
 
 # Setup Steps
-Choose one of the following two ways to set up:
+Choose **one** of the following two ways to set up:
 ### 1. To setup using our template project
 Download the project at git tag: [StarterProject](), unzip it and open the `.sln` file.
 
@@ -45,6 +45,9 @@ Download the project at git tag: [StarterProject](), unzip it and open the `.sln
         - This file is not mandatory
 
 ## Prebuilt/Packaged Engine Levels
+|  Level Name       |   Level Description                                           |   Level Inputs    |
+|      :-:          |           :-:                                                 |       :-:         |
+|  `CameraLevel`    |   A level with only a camera and nothing else   | N/A |
 
 # Developing with the Engine
 The Isetta Engine uses an entity-component-system. Assumptions of the engine:
