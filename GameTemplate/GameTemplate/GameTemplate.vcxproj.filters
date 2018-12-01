@@ -27,10 +27,6 @@
     <None Include="config.cfg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="config.cfg" />
-    <None Include="user.cfg" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="IsettaEngine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
