@@ -51,6 +51,6 @@ Choose **one** of the following two options to set up:
 ## Prebuilt/Packaged Engine Levels
 |  Level Name       |   Level Description                                           |   Level Inputs    |
 |      :-:          |           :-:                                                 |       :-:         |
-|  `CameraLevel`    |   A level with only a camera and nothing else   | N/A |
+|  `EmptyLevel`    |   A level with only a camera and nothing else   | N/A |
 
 ## For more information, look at [our website](https://isetta.io/engine_docs/home)
