@@ -65,7 +65,7 @@ The Isetta Engine uses an entity-component-system. Assumptions of the engine:
 
 DEFINE_LEVEL(LEVEL_NAME)
 void Load() override;
-void OnLevelUnload() override;
+void OnUnload() override;
 DEFINE_LEVEL_END
 ```
 
@@ -77,6 +77,8 @@ DEFINE_LEVEL_END
 #include <Core/IsettaCore.h>
 #include <Graphics/CameraComponent.h>
 
+using namespace Isetta;
+
 void LEVEL_NAME::Load() {
     // Level NEEDS a camera
     Entity* cameraEntity = Entity::Instantiate("Camera");
@@ -85,7 +87,7 @@ void LEVEL_NAME::Load() {
                              Math::Vector3::one);
 }
 
-void LEVEL_NAME::OnLevelUnload() {
+void LEVEL_NAME::OnUnload() {
     // Anything you might need to do on the level unloading
     // Entity's will be destructed/destroyed on actual level unload
 }
@@ -124,7 +126,7 @@ To create a component, create a header (.h) and cpp (.cpp) file of the name of y
 #pragma once
 #include <Scene/Component.h>
 
-DEFINE_COMPONENT(ExampleComponent, Component, true)
+DEFINE_COMPONENT(ExampleComponent, Component, false)
 private:
 // Private variables of your component
 public:
@@ -160,7 +162,7 @@ Here are empty template of component header to copy:
 #pragma once
 #include <Scene/Component.h>
 
-DEFINE_COMPONENT(COMPONENT_NAME, Component, true)
+DEFINE_COMPONENT(COMPONENT_NAME, Component, false)
 private:
 public:
 COMPONENT_NAME() = default;
