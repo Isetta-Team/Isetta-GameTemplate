@@ -4,7 +4,7 @@ The sample, demo game for the IsettaEngine
 # Setup Steps
 Choose **one** of the following two options to set up:
 ### Option 1: To setup using our template project
-- Download the project at git tag: [StarterProject](), unzip it and open the `.sln` file.
+- Download this repo as a zip
 - In /GameTemplate/GameTemplate, create a `user.cfg` file, we will introduce how to use it later.
 
 ### Option 2: To setup a new project using the IsettaEngine:
