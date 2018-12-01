@@ -32,6 +32,12 @@ XCOPY /Y /R "$(EngineDir)Build\$(Configuration)\*.lib" "$(TargetDir)"</Command>
       <Value>$(EngineDir)</Value>
     </BuildMacro>
   </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="**/*.cfg;**/*.geo;**/*.xml">
+      <Command>copy /Y "%(Identity)" "$(TargetDir)%(Identity)"</Command>
+      <Outputs>$(TargetDir)%(Identity)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
   <PropertyGroup Label="Debugging Properties">
     <LocalDebuggerWorkingDirectory>$(SolutionDir)Build\$(ProjectName)-$(Platform)-$(Configuration)</LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
