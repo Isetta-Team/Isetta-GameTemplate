@@ -22,8 +22,7 @@ Choose **one** of the following two options to set up:
         return 0;
     }
     ```
-- Download zip file of the [engine](https://github.com/Isetta-Team/Isetta-Engine/releases) (includes `.dll` and `.h`)
-    - TODO (JACOB!): Create [release](https://help.github.com/articles/creating-releases/)
+- Download zip file of the [engine](https://github.com/Isetta-Team/Isetta-GameTemplate/releases/tag/gamejam) (includes `.dll` and `.h`)
     - Extract in `.sln` directory
 - Project Properties:
     - Configuration Manager > Active solution platform: > <Edit...> > Click x86 > Remove
