@@ -18,6 +18,9 @@
     <ClCompile Include="game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="IsettaEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="user.cfg" />
@@ -26,5 +29,10 @@
   <ItemGroup>
     <None Include="config.cfg" />
     <None Include="user.cfg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="IsettaEngine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
