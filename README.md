@@ -2,11 +2,12 @@
 The sample, demo game for the IsettaEngine
 
 # Setup Steps
-Choose **one** of the following two ways to set up:
-### 1. To setup using our template project
-Download the project at git tag: [StarterProject](), unzip it and open the `.sln` file.
+Choose **one** of the following two options to set up:
+### Option 1: To setup using our template project
+- Download the project at git tag: [StarterProject](), unzip it and open the `.sln` file.
+- In /GameTemplate/GameTemplate, create a `user.cfg` file, we will introduce how to use it later.
 
-### 2. To setup a new project using the IsettaEngine:
+### Option 2: To setup a new project using the IsettaEngine:
 - Create a Visual Studio Project
 - Create a `.cpp` file to start the engine, copy:
     ```cpp
@@ -56,6 +57,7 @@ The Isetta Engine uses an entity-component-system. Assumptions of the engine:
 - When using the built-in `MemoryManager`, it does not protect you against yourself (in general the engine does not protect a naive user from shooting themselves in the foot)
 
 ## Levels
+Levels in Isetta are comparable to scenes in Unity. To create a level, add the following `.h` and `.cpp` file. To load the file you just added as start up level, go to your `user.cfg` and set `start_level` to `LEVEL_NAME`.
 
 `LEVEL_NAME.h`
 ```cpp
