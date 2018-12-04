@@ -53,4 +53,4 @@ Choose **one** of the following two options to set up:
 |      :-:          |           :-:                                                 |       :-:         |
 |  `EmptyLevel`    |   A level with only a camera and nothing else   | N/A |
 
-## For more information, look at [our website](https://isetta.io/engine_docs/home)
+## For more information and documentation, look at [our website](https://isetta.io/engine_docs/home)
