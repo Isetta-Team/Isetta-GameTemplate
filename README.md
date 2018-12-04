@@ -1,5 +1,5 @@
-# Isetta-Game
-The sample, demo game for the IsettaEngine
+# Isetta Game Template
+This is the repository which you can use as the base to make your own game with [Isetta Engine](https://github.com/Isetta-Team/Isetta-Engine).
 
 # Setup Steps
 Choose **one** of the following two options to set up:
